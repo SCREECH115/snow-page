@@ -1,0 +1,117 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  background-color: #030f29;
+}
+
+#snow-container {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#snow-container button {
+  pointer-events: all;
+}
+
+button {
+  padding: 15px 35px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #030f29;
+  cursor: pointer;
+  color: white;
+  border: 1px solid white;
+  transform: scale(1.1);
+}
+
+.flake-container {
+  position: absolute;
+  top: 0%;
+  padding: 0 50px;
+  animation: fall 10s 0s 1 linear forwards;
+}
+
+.flake-container img {
+  animation: rotate 6s 0s infinite linear forwards,
+    leftToRight 2s 0s infinite ease-in-out alternate;
+  position: absolute;
+}
+
+#santa-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  transform: rotateY(180deg);
+}
+
+.reindeer-container {
+  position: relative;
+  top: -20px;
+  padding: 20px 0;
+  animation: moveUpAndDown 2s 0s infinite alternate ease-in-out;
+}
+
+.reindeer-container:nth-of-type(2) {
+  animation-delay: 1s;
+}
+.reindeer-container:nth-of-type(3) {
+  animation-delay: 2s;
+}
+
+#santa-container.flipped-santa {
+  transform: rotateY(0deg);
+}
+
+@keyframes moveUpAndDown {
+  from {
+    top: -20px;
+  }
+  to {
+    top: 20px;
+  }
+}
+
+@keyframes fall {
+  from {
+    top: 0%;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes leftToRight {
+  from {
+    left: 0%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
